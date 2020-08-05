@@ -9,8 +9,8 @@ const api = axios.create({
 
 api.interceptors.request.use(
   function (config) {
-    config.url = config.url + `&appid=${general.apiKey}`;
-    console.log(config);
+    // config.url = config.url + `&appid=${general.apiKey}`;
+    // console.log(config);
     return config;
   },
   function (error) {

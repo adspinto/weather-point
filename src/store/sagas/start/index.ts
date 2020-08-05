@@ -5,6 +5,8 @@ import {CommonActions} from '@react-navigation/native';
 import {errorHandler} from '../errorHandler';
 import {InteractionManager} from 'react-native';
 import api from '../../../services/api';
+import Geolocation from '@react-native-community/geolocation';
+import {LocationActions} from '../../creators'
 
 export function* getStartRequest() {
   try {
@@ -26,6 +28,8 @@ export function* getStartRequest() {
       };
       yield call(mainNavigation.reset, reset);
     }
+
+    yield put(LocationActions.getLocationRequest());
   } catch (error) {
     yield call(errorHandler, error);
   }

@@ -6,24 +6,12 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import start from './start';
 import update from './update';
-
-// version: {},
-// deviceInfo: {},
-// status: 'iddle',
-// errorMessage: '',
+import location from './location';
 
 export const startConfig = {
   key: 'startConfig',
   storage: AsyncStorage,
-  blacklist: ['tutorialCompleted'],
-  stateReconciler: autoMergeLevel2, // see "Merge Process" section for details.
-  writeFailHandler: (err: any) =>
-    console.log(err, 'writeFailHandler startConfig'),
-};
-export const authConfig = {
-  key: 'authConfig',
-  storage: AsyncStorage,
-  blacklist: ['status', 'forgotPasswordStatus'],
+  whitelist: ['tutorialCompleted'],
   stateReconciler: autoMergeLevel2, // see "Merge Process" section for details.
   writeFailHandler: (err: any) =>
     console.log(err, 'writeFailHandler startConfig'),
@@ -33,4 +21,5 @@ export default combineReducers({
   network,
   start: persistReducer(startConfig, start),
   update,
+  location,
 });
