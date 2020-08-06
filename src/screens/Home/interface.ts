@@ -3,6 +3,7 @@ import {
   ImageSourcePropType,
   TextStyle,
   ImageStyle,
+  View,
 } from 'react-native';
 import {LocationType} from '../../store/ducks/location/interface';
 import {WeatherData} from '../../store/ducks/weather/interface';
@@ -41,6 +42,9 @@ export interface IStyles {
   chartLabelItemSubContainer: ViewStyle;
   locationArrowContainer: ViewStyle;
   locationArrowSubContainer: ViewStyle;
+  loadingContainer: ViewStyle;
+  windIndicator: ViewStyle;
+  windContentContainer: ViewStyle;
 }
 
 export interface HomeProps {
@@ -56,6 +60,7 @@ export interface HomeViewProps {
   sevenPress: () => void;
   currentTemperatureStatus: string;
   currentTemperature: number;
+  status: string;
 }
 
 export interface HeaderProps {
@@ -65,11 +70,15 @@ export interface HeaderProps {
 export interface CurrentProps {
   currentTemperatureStatus: string;
   currentTemperature: number;
+  status: string;
 }
 export interface SevenProps {
   onPress: () => void;
   title: string;
+  status: string;
+  data: any;
 }
 export interface WindChartProps {
   data: any;
+  status: string;
 }

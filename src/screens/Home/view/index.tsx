@@ -8,11 +8,11 @@ import Header from './header';
 import Current from './current';
 import Seven from './seven';
 import WindChart from './windChart';
+
 const HomeView = (props: HomeViewProps) => {
   const {
-    source,
-    navigation,
     data,
+    status,
     location,
     headerPress,
     currentTemperatureStatus,
@@ -22,12 +22,13 @@ const HomeView = (props: HomeViewProps) => {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <Header title={location.cityName} onPress={headerPress} />
-      <WindChart data={data.hourly} />
       <Current
+        status={status}
         currentTemperatureStatus={currentTemperatureStatus}
         currentTemperature={currentTemperature}
       />
-      <Seven onPress={sevenPress} data={data.daily} />
+      <Seven status={status} onPress={sevenPress} data={data.daily} />
+      <WindChart status={status} data={data.hourly} />
     </ScrollView>
   );
 };

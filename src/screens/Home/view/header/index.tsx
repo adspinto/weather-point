@@ -6,45 +6,42 @@ import {
   LayoutAnimation,
   TouchableWithoutFeedback,
 } from 'react-native';
-import styles from './styles';
-import {images} from '../../../utils';
-import {HeaderProps} from '../interface';
-import Icon from '../../../components/fontAwesome';
+import styles from '../styles';
+import {images} from '../../../../utils';
+import {HeaderProps} from '../../interface';
+import Icon from '../../../../components/fontAwesome';
 
 const Header = (props: HeaderProps) => {
   const {onPress, title} = props;
-  const [layout, setLayout] = useState({
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0,
-  });
-  const [visible, setVisible] = useState(false);
-  const onLayout = useCallback(
-    ({
-      nativeEvent: {
-        layout: {x, y, width, height},
-      },
-    }) => {
-      setLayout({x, y, width, height});
-    },
-    [],
-  );
+  // const [layout, setLayout] = useState({
+  //   x: 0,
+  //   y: 0,
+  //   width: 0,
+  //   height: 0,
+  // });
+  // const [visible, setVisible] = useState(false);
+  // const onLayout = useCallback(
+  //   ({
+  //     nativeEvent: {
+  //       layout: {x, y, width, height},
+  //     },
+  //   }) => {
+  //     setLayout({x, y, width, height});
+  //   },
+  //   [],
+  // );
 
   return (
     <View style={styles.header}>
       <Text style={styles.headerTitle}>{title}</Text>
       <TouchableOpacity
         hitSlop={{right: 15, left: 15, top: 15, bottom: 15}}
-        onLayout={onLayout}
-        onPress={() => {
-          LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
-          setVisible(!visible);
-        }}>
-        <Icon name={'ellipsis-v'} size={26} />
+        // onLayout={onLayout}
+        onPress={onPress}>
+        <Icon name={'sync'} size={26} />
       </TouchableOpacity>
 
-      {visible && (
+      {/* {visible && (
         <View
           style={[
             styles.headerButton,
@@ -57,7 +54,7 @@ const Header = (props: HeaderProps) => {
             <Text>Compartilhar</Text>
           </TouchableOpacity>
         </View>
-      )}
+      )} */}
     </View>
   );
 };
