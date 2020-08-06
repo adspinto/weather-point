@@ -16,6 +16,7 @@ const HomeView = (props: HomeViewProps) => {
     headerPress,
     currentTemperatureStatus,
     currentTemperature,
+    sevenPress
   } = props;
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -24,7 +25,7 @@ const HomeView = (props: HomeViewProps) => {
         currentTemperatureStatus={currentTemperatureStatus}
         currentTemperature={currentTemperature}
       />
-      <Seven title={location.cityName} onPress={headerPress} />
+      <Seven onPress={sevenPress} data={data.daily} />
     </ScrollView>
   );
 };

@@ -46,3 +46,20 @@ export function range(start, end, step = 1) {
   // Finally, return the new array.
   return Array.from(Array(length), (x, index) => start + index * step);
 }
+
+export const isToday = (date: any) => {
+  const today = new Date();
+  return (
+    date.getDate() === today.getDate() &&
+    date.getMonth() === today.getMonth() &&
+    date.getFullYear() === today.getFullYear()
+  );
+};
+export const isTomorrow = (date: any) => {
+  const today = new Date();
+  return (
+    date.getDate() === today.getDate() + 1 &&
+    date.getMonth() === today.getMonth() &&
+    date.getFullYear() === today.getFullYear()
+  );
+};

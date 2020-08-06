@@ -23,10 +23,12 @@ const Home = (props: HomeProps) => {
   });
 
   const headerPress = useCallback(() => {}, []);
+  const sevenPress = useCallback(() => {}, []);
   return (
     <HomeView
       data={data}
       headerPress={headerPress}
+      sevenPress={sevenPress}
       location={location}
       navigation={navigation}
       source={images.defaultBackground}
