@@ -1,8 +1,16 @@
 export interface Location {
-  data: any;
+  data: LocationType | {};
   status: string;
   errorMessage: string;
 }
+
+export type LocationType = {
+  bairro: string;
+  cityName: string;
+  estado: string;
+  latitude: number;
+  longitude: number;
+};
 
 export enum Types {
   GET_LOCATION_REQUEST = 'start/GET_LOCATION_REQUEST',

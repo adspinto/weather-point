@@ -1,8 +1,16 @@
 export interface Weather {
-  data: any;
+  data: WeatherData;
   status: string;
   errorMessage: string;
 }
+export type WeatherData = {
+  current: any;
+  daily: any[];
+  lat: number;
+  lon: number;
+  timezone: string;
+  timezone_offset: number;
+};
 
 export enum Types {
   GET_WEATHER_REQUEST = 'start/GET_WEATHER_REQUEST',
@@ -18,7 +26,7 @@ export interface Actions {
 export type locationType = {
   longitude: number;
   latitude: number;
-}
+};
 export interface GetWeatherRequest {
   type: Types.GET_WEATHER_REQUEST;
   payload: {location: locationType};

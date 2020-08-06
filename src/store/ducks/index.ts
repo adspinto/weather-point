@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import start from './start';
 import update from './update';
 import location from './location';
+import weather from './weather';
 
 export const startConfig = {
   key: 'startConfig',
@@ -22,4 +23,5 @@ export default combineReducers({
   start: persistReducer(startConfig, start),
   update,
   location,
+  weather,
 });
