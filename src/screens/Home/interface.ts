@@ -70,3 +70,6 @@ export interface SevenProps {
   onPress: () => void;
   title: string;
 }
+export interface WindChartProps {
+  data: any;
+}

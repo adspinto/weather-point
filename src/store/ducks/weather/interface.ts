@@ -6,6 +6,7 @@ export interface Weather {
 export type WeatherData = {
   current: any;
   daily: any[];
+  hourly: any[];
   lat: number;
   lon: number;
   timezone: string;

@@ -119,15 +119,19 @@ const styles = StyleSheet.create<IStyles>({
   labelContainer: {
     flexDirection: 'row',
     width: width * 4.8,
-    borderWidth: 1,
+    // borderWidth: 1,
     marginTop: -20,
     justifyContent: 'space-around',
+    // backgroundColor: 'rgba(0,0,0,0.05)',
   },
   chart: {marginLeft: -35},
   chartWindText: {
     fontSize: 12,
   },
-  chartLabelItemContainer: {},
+  chartLabelItemContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   chartLabelItemSubContainer: {
     justifyContent: 'center',
     flexDirection: 'row',
@@ -136,7 +140,6 @@ const styles = StyleSheet.create<IStyles>({
     width: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    // borderWidth: 1,
   },
   locationArrowSubContainer: {position: 'absolute'},
 });

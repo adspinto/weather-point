@@ -8,11 +8,11 @@ import {
 } from 'react-native';
 import styles from './styles';
 import {images} from '../../../utils';
-import {CurrentProps} from '../interface';
+import {WindChartProps} from '../interface';
 import Icon from '../../../components/fontAwesome';
 import {LineChart} from 'react-native-chart-kit';
 const screenWidth = Dimensions.get('window').width;
-const WindChart = (props: CurrentProps) => {
+const WindChart = (props: WindChartProps) => {
   const {data} = props;
   const date = new Date();
   const hour = date.getHours();
@@ -48,7 +48,7 @@ const WindChart = (props: CurrentProps) => {
     backgroundGradientFrom: '#1E2923',
     backgroundGradientFromOpacity: 0,
     backgroundGradientTo: '#08130D',
-    backgroundGradientToOpacity: 0.1,
+    backgroundGradientToOpacity: 0,
     color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
     strokeWidth: 4, // optional, default 3
     barPercentage: 0.5,
@@ -66,7 +66,7 @@ const WindChart = (props: CurrentProps) => {
           style={styles.chart}
           data={chartData}
           width={screenWidth * 5}
-          height={220}
+          height={150}
           chartConfig={chartConfig}
           withHorizontalLabels={false}
           withVerticalLabels={false}
@@ -94,7 +94,10 @@ const WindChart = (props: CurrentProps) => {
                     <Text style={styles.chartWindText}>
                       {item.wind_speed} m/s
                     </Text>
-                    {/* <Text></Text> */}
+                  </View>
+                  <View>
+                    <Text>{Math.floor(item.temp)}°C</Text>
+                    <Text>{index === 0 ? 'Agora' : `${item.hour}:00`}</Text>
                   </View>
                 </View>
               );
