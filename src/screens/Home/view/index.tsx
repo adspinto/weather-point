@@ -7,6 +7,7 @@ import Icon from '../../../components/fontAwesome';
 import Header from './header';
 import Current from './current';
 import Seven from './seven';
+import WindChart from './windChart';
 const HomeView = (props: HomeViewProps) => {
   const {
     source,
@@ -16,11 +17,12 @@ const HomeView = (props: HomeViewProps) => {
     headerPress,
     currentTemperatureStatus,
     currentTemperature,
-    sevenPress
+    sevenPress,
   } = props;
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <Header title={location.cityName} onPress={headerPress} />
+      <WindChart data={data.hourly} />
       <Current
         currentTemperatureStatus={currentTemperatureStatus}
         currentTemperature={currentTemperature}

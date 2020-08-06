@@ -11,10 +11,10 @@ export function* getWeatherRequest(action: GetWeatherRequest) {
 
     const response = yield call(
       api.get,
-      `onecall?lat=${location.latitude}&lon=${location.longitude}&units=metric&lang=pt_br&exclude=hourly,minutely&appid=${general.openWeatherApiKey}`,
+      `onecall?lat=${location.latitude}&lon=${location.longitude}&units=metric&lang=pt_br&exclude=minutely&appid=${general.openWeatherApiKey}`,
     );
     console.log(response);
-    const data = response.data;
+    let data = response.data;
     var days = [
       'Domingo',
       'Segunda',
@@ -34,12 +34,25 @@ export function* getWeatherRequest(action: GetWeatherRequest) {
     data.daily.map((item: any) => {
       item.date = new Date(item.dt * 1000);
       item.day = days[item.date.getDay()];
-      // http://openweathermap.org/img/wn/10d@2x.png
+
       item.weather.map((weather: any) => {
         weather.iconUrl = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
       });
       return item;
     });
+
+    const hourly = data.hourly
+      .filter((item: any, index: number) => index < 24)
+      .map((item: any) => {
+        item.date = new Date(item.dt * 1000);
+        item.hour = item.date.getHours();
+
+        item.weather.map((weather: any) => {
+          weather.iconUrl = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
+        });
+        return item;
+      });
+    data.hourly = hourly;
 
     yield put(WeatherActions.getWeatherSuccess(data));
   } catch (error) {

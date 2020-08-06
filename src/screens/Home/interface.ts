@@ -30,7 +30,17 @@ export interface IStyles {
   sevenDescription: TextStyle;
   sevenDay: TextStyle;
   sevenPrevision: TextStyle;
+  headerTitle: TextStyle;
+  chartWindText: TextStyle;
   sevenPrevisionContainer: ViewStyle;
+  headerButton: ViewStyle;
+  touchableShare: ViewStyle;
+  labelContainer: ViewStyle;
+  chart: ViewStyle;
+  chartLabelItemContainer: ViewStyle;
+  chartLabelItemSubContainer: ViewStyle;
+  locationArrowContainer: ViewStyle;
+  locationArrowSubContainer: ViewStyle;
 }
 
 export interface HomeProps {

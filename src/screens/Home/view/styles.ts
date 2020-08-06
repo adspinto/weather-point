@@ -14,6 +14,29 @@ const styles = StyleSheet.create<IStyles>({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerTitle: {
+    fontSize: 20,
+  },
+  headerButton: {
+    position: 'absolute',
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    padding: 20,
+    borderRadius: 5,
+    zIndex: 10,
+    width: 140,
+  },
+  touchableShare: {
+    position: 'absolute',
+    height,
+    width,
+    borderWidth: 1,
+    backgroundColor: 'red',
+    top: -20,
+    left: -20,
+    zIndex: 11,
   },
   current: {
     height: height * 0.4,
@@ -93,6 +116,29 @@ const styles = StyleSheet.create<IStyles>({
     fontSize: 18,
     textAlign: 'center',
   },
+  labelContainer: {
+    flexDirection: 'row',
+    width: width * 4.8,
+    borderWidth: 1,
+    marginTop: -20,
+    justifyContent: 'space-around',
+  },
+  chart: {marginLeft: -35},
+  chartWindText: {
+    fontSize: 12,
+  },
+  chartLabelItemContainer: {},
+  chartLabelItemSubContainer: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  locationArrowContainer: {
+    width: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // borderWidth: 1,
+  },
+  locationArrowSubContainer: {position: 'absolute'},
 });
 
 export default styles;
