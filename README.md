@@ -16,6 +16,17 @@ Desenvolvimento
 yarn / yarn install
 ```
 
+Key Libraries:
+- react-native-svg
+- react-navigation
+- redux
+- react-redux
+- redux-saga
+- @react-native-community/geolocation
+- react-native-chart-kit
+- typescript
+
+
 Roadmap
 ---
 - [x] Gradiente do tempo;
