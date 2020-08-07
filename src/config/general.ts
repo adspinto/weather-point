@@ -1,10 +1,10 @@
 import {Platform} from 'react-native';
 
-let URL = 'https://openweathermap.org';
+let URL = 'https://api.openweathermap.org';
 
 export const general = {
   URL,
-  baseURL: URL + '/data/2.5/weather?q=',
+  baseURL: URL + '/data/2.5/',
   appName: 'WeatherPoint',
   Version_Android: '1.0.0',
   Version_tablet: '1.0.0',
@@ -16,7 +16,8 @@ export const general = {
     appName: 'WeatherPoint',
     playStoreId: 'com.WeatherPoint',
   },
-  apiKey: '075d777d784bf0ea1adbd0eb718cd2b1',
+  openWeatherApiKey: '40ce02380b334d5750d01cb219642e44',
+  geoCodingApi: 'AIzaSyAGVp4Z5_3i1XdAGOq0VN157XjahS5GmSc',
 };
 
 export default general;

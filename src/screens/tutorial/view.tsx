@@ -28,12 +28,12 @@ const TutorialView = (props: TutorialViewProps) => {
       slideBackground: images.tutorial2,
       fontSize: 26,
     },
-    {
-      slideTitle: 'Compartilhe o clima',
-      slideContent: 'Informe seus amigos sobre como está o clima hoje!',
-      slideBackground: images.tutorial3,
-      fontSize: 26,
-    },
+    // {
+    //   slideTitle: 'Compartilhe o clima',
+    //   slideContent: 'Informe seus amigos sobre como está o clima hoje!',
+    //   slideBackground: images.tutorial3,
+    //   fontSize: 26,
+    // },
   ];
 
   const keyExtractor = (item: IItem, index: number) => `item-${index}`;

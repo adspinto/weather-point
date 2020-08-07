@@ -26,7 +26,6 @@ export function* getUpdateSuccess(action) {
   try {
     let check = yield call(checkDeviceVersion);
     if (check) {
-      console.log('check', check, mainNavigation);
       yield delay(3000);
       yield call(mainNavigation.navigate, 'NewUpdate');
     }

@@ -6,6 +6,8 @@ import Tutorial from '../screens/tutorial';
 import NoConnection from '../screens/noConnection';
 import NewUpdate from '../screens/newUpdate';
 import Home from '../screens/Home';
+import SevenDays from '../screens/sevenDays';
+
 enableScreens();
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +26,23 @@ const screenList = [
     name: 'Tutorial',
     options: {headerShown: false},
     component: Tutorial,
+  },
+  {
+    name: 'SevenDays',
+    options: ({route}: {route: any}) => {
+      console.log('route no seven', route);
+      return {
+        title: '7 dias',
+        headerTitleStyle: {
+          fontWeight: '900',
+          color: 'white',
+        },
+        headerStyle: {
+          backgroundColor: route.params.gradient.main,
+        },
+      };
+    },
+    component: SevenDays,
   },
   {
     name: 'NewUpdate',
