@@ -18,14 +18,14 @@ yarn / yarn install
 
 Roadmap
 ---
-[x] Gradiente do tempo;
-[x] One call;
-[] Gradiente do tempo em horas;
-[] Mais informações de vento;
-[] Persistencia de dados para consumo offline;
-[] Implementação code-push;
-[] Implementação de firebase Admob;
-[] Implementação de firebase Analytics;
-[] Implementação de firebase Crashalytics;
-[] Implementação de sentry;
+- [x] Gradiente do tempo;
+- [x] One call;
+- [ ] Gradiente do tempo em horas;
+- [ ] Mais informações de vento;
+- [ ] Persistencia de dados para consumo offline;
+- [ ] Implementação code-push;
+- [ ] Implementação de firebase Admob;
+- [ ] Implementação de firebase Analytics;
+- [ ] Implementação de firebase Crashalytics;
+- [ ] Implementação de sentry;
 
