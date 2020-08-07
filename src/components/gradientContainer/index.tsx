@@ -5,16 +5,20 @@ import {GradientProps} from './interface';
 import {Defs, LinearGradient, Svg, Stop, Rect} from 'react-native-svg';
 
 const GradientContainer = (props: GradientProps) => {
-  const {gradientColor} = props;
+  const {gradientColor, status} = props;
+  const [height, setHeight] = useState(Dimensions.get('screen').height + 100);
+  useEffect(() => {
+    if (status === 'pending') {
+      setHeight(Dimensions.get('screen').height + 400);
+    }
+  }, [status]);
   return (
-    <View style={styles.gradientContainer}>
+    <View style={[styles.gradientContainer, {height}]}>
       <StatusBar
         barStyle={'light-content'}
         backgroundColor={gradientColor.main}
       />
-      <Svg
-        height={`${Dimensions.get('screen').height + 100}`}
-        width={`${Dimensions.get('screen').width + 1}`}>
+      <Svg height={height} width={`${Dimensions.get('screen').width + 1}`}>
         <Defs>
           <LinearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
             <Stop
@@ -31,7 +35,7 @@ const GradientContainer = (props: GradientProps) => {
         </Defs>
         <Rect
           width={`${Dimensions.get('screen').width}`}
-          height={`${Dimensions.get('screen').height + 100}`}
+          height={height}
           fill="url(#grad)"
         />
       </Svg>

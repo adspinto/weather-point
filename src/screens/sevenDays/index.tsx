@@ -16,7 +16,7 @@ const SevenDays = (props: SevenDaysProps) => {
   });
   return (
     <View>
-      <GradientContainer gradientColor={gradient} />
+      <GradientContainer status={status} gradientColor={gradient} />
       <SevenDaysView status={status} data={daily} />
     </View>
   );

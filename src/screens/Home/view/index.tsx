@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect, useCallback} from 'react';
 import {ScrollView} from 'react-native';
 import styles from './styles';
 import {HomeViewProps} from '../interface';
@@ -59,8 +59,12 @@ const HomeView = (props: HomeViewProps) => {
   }, []);
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <GradientContainer gradientColor={gradient} />
+    <ScrollView
+      contentContainerStyle={[
+        styles.scrollContainer,
+        status === 'pending' ? styles.conditionalHeight : {},
+      ]}>
+      <GradientContainer status={status} gradientColor={gradient} />
       <Header title={location.cityName} onPress={headerPress} />
       <Current
         status={status}

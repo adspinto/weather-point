@@ -12,6 +12,8 @@ import {StackNavigationProp} from '@react-navigation/stack';
 export interface IStyles {
   scrollContainer: ViewStyle;
   gradientContainer: ViewStyle;
+  conditionalHeight: ViewStyle;
+
 }
 
 export interface HomeProps {
