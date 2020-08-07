@@ -7,11 +7,13 @@ import useCustomDispatch from '../../customHooks/dispatch';
 import {StartActions} from '../../store/creators';
 const Tutorial = (props: TutorialProps) => {
   const {navigation} = props;
-  const setTutorialCompleted = useCustomDispatch(StartActions.setTutorialCompleted);
+  const setTutorialCompleted = useCustomDispatch(
+    StartActions.setTutorialCompleted,
+  );
   const flatListRef = useRef(null);
 
   const slideNext = (index: number) => {
-    if (index < 2) {
+    if (index < 1) {
       flatListRef?.current.scrollToIndex({animated: true, index: index + 1});
     } else {
       setTutorialCompleted();

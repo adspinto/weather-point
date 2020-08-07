@@ -16,6 +16,21 @@ Desenvolvimento
 yarn / yarn install
 ```
 
+Passo adicional para iOs:
+```
+cd ios && pod instal
+```
+
+Para rodar no Android
+```
+react-native run-android
+```
+
+Para rodar no iOs
+```
+react-native run-ios ou através de build do xcode
+```
+
 Key Libraries:
 - react-native-svg
 - react-navigation

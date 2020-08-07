@@ -35,6 +35,7 @@
 		D941597F857B4605837B5CF1 /* FontAwesome5Pro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 904751188AE84DA394462066 /* FontAwesome5Pro-Light.otf */; };
 		F0D20D1ED601424B8040824A /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 564F40184C944BE3A155C9E1 /* OpenSans-SemiBold.ttf */; };
 		F97AAB858935442E9A4954F2 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12CECF1392574492A602F016 /* fa-solid-900.ttf */; };
+		F9FABA3C24DD0A53000E8461 /* splash_screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FABA3B24DD0A53000E8461 /* splash_screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EE10D979260945C09BA7BA7D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		F9FABA3B24DD0A53000E8461 /* splash_screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = splash_screen.storyboard; sourceTree = "<group>"; };
 		FE97B1D6B1BB8884EEDD2433 /* Pods-weatherpoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherpoint.debug.xcconfig"; path = "Target Support Files/Pods-weatherpoint/Pods-weatherpoint.debug.xcconfig"; sourceTree = "<group>"; };
 		FFC12572521640F7BE4A5EFF /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../src/assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +180,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				F9FABA3B24DD0A53000E8461 /* splash_screen.storyboard */,
 			);
 			name = weatherpoint;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				F0D20D1ED601424B8040824A /* OpenSans-SemiBold.ttf in Resources */,
 				D019FE2B352E4A90B40B406F /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				B396F7E4F4964654937111BD /* OpenSans.ttf in Resources */,
+				F9FABA3C24DD0A53000E8461 /* splash_screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
