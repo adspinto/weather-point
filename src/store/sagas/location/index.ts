@@ -38,7 +38,6 @@ const successCallback = (info: any, resolve: any, reject: any) => {
       let cityName = '';
       let bairro = '';
       let estado = '';
-      console.log(response.data.results);
       data.map((item: any) => {
         if (item.types) {
           item.types.map((type: any) => {

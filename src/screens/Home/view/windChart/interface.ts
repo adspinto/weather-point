@@ -3,7 +3,6 @@ import {ViewStyle, TextStyle} from 'react-native';
 export interface IStyles {
   chartWindText: TextStyle;
   sevenPrevisionContainer: ViewStyle;
-  headerButton: ViewStyle;
   labelContainer: ViewStyle;
   chart: ViewStyle;
   chartLabelItemContainer: ViewStyle;
@@ -13,6 +12,8 @@ export interface IStyles {
   loadingContainer: ViewStyle;
   windIndicator: ViewStyle;
   windContentContainer: ViewStyle;
+  white: TextStyle;
+  windchartRoot: ViewStyle;
 }
 
 export interface WindChartProps {

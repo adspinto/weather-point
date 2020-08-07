@@ -11,40 +11,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 
 export interface IStyles {
   scrollContainer: ViewStyle;
-  root: ViewStyle;
-  header: ViewStyle;
-  current: ViewStyle;
-  seven: ViewStyle;
-  sevenImageContainer: ViewStyle;
-  sevenContainer: ViewStyle;
-  sevenDays: ViewStyle;
-  minMax: ViewStyle;
-  sevenSlash: TextStyle;
-  degreeContainer: ViewStyle;
-  degreeCelsius: TextStyle;
-  degreeNumber: TextStyle;
-  degreeText: TextStyle;
-  iconSeven: TextStyle;
-  sevenImage: ImageStyle;
-  sevenMax: TextStyle;
-  sevenMin: TextStyle;
-  sevenDescription: TextStyle;
-  sevenDay: TextStyle;
-  sevenPrevision: TextStyle;
-  headerTitle: TextStyle;
-  chartWindText: TextStyle;
-  sevenPrevisionContainer: ViewStyle;
-  headerButton: ViewStyle;
-  touchableShare: ViewStyle;
-  labelContainer: ViewStyle;
-  chart: ViewStyle;
-  chartLabelItemContainer: ViewStyle;
-  chartLabelItemSubContainer: ViewStyle;
-  locationArrowContainer: ViewStyle;
-  locationArrowSubContainer: ViewStyle;
-  loadingContainer: ViewStyle;
-  windIndicator: ViewStyle;
-  windContentContainer: ViewStyle;
+  gradientContainer: ViewStyle;
 }
 
 export interface HomeProps {
@@ -74,7 +41,6 @@ export interface CurrentProps {
 }
 export interface SevenProps {
   onPress: () => void;
-  title: string;
   status: string;
   data: any;
 }

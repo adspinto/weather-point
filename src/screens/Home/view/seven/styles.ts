@@ -3,17 +3,13 @@ const {height} = Dimensions.get('screen');
 
 import {IStyles} from './interface';
 
-console.log(height);
 const styles = StyleSheet.create<IStyles>({
   seven: {
-    borderWidth: 1,
     marginVertical: 20,
     fontFamily: 'OpenSans',
     padding: 20,
     borderRadius: 15,
-    backgroundColor: 'rgba(255,255,255, 0.3)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'rgba(255,255,255, 0.081)',
   },
   sevenDays: {
     flexDirection: 'row',
@@ -22,6 +18,7 @@ const styles = StyleSheet.create<IStyles>({
   },
   iconSeven: {
     marginHorizontal: 5,
+    color: 'white',
   },
   sevenImageContainer: {
     width: 30,
@@ -36,6 +33,7 @@ const styles = StyleSheet.create<IStyles>({
   },
   sevenSlash: {
     marginHorizontal: 5,
+    color: 'white',
   },
   sevenContainer: {
     flexDirection: 'row',
@@ -44,24 +42,29 @@ const styles = StyleSheet.create<IStyles>({
   },
   sevenDay: {
     fontSize: 16,
+    color: 'white',
   },
   sevenDescription: {
     fontSize: 16,
+    color: 'white',
   },
   sevenMax: {
     fontSize: 16,
+    color: 'white',
   },
   sevenMin: {
     fontSize: 16,
+    color: 'white',
   },
   sevenPrevisionContainer: {
     padding: 15,
-    borderWidth: 1,
     borderRadius: 12,
+    backgroundColor: 'rgba(255,255,255, 0.1)',
   },
   sevenPrevision: {
     fontSize: 18,
     textAlign: 'center',
+    color: 'white',
   },
 });
 

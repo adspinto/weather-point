@@ -3,7 +3,6 @@ const {width, height} = Dimensions.get('screen');
 import {colors} from '../../../../utils';
 import {IStyles} from './interface';
 
-console.log(height);
 const styles = StyleSheet.create<IStyles>({
   header: {
     flexDirection: 'row',
@@ -12,6 +11,7 @@ const styles = StyleSheet.create<IStyles>({
   },
   headerTitle: {
     fontSize: 20,
+    color: 'white',
   },
   headerButton: {
     position: 'absolute',

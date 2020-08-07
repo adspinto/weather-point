@@ -6,7 +6,7 @@ import {
   LayoutAnimation,
   TouchableWithoutFeedback,
 } from 'react-native';
-import styles from '../styles';
+import styles from './styles';
 import {images} from '../../../../utils';
 import {HeaderProps} from '../../interface';
 import Icon from '../../../../components/fontAwesome';
@@ -38,7 +38,7 @@ const Header = (props: HeaderProps) => {
         hitSlop={{right: 15, left: 15, top: 15, bottom: 15}}
         // onLayout={onLayout}
         onPress={onPress}>
-        <Icon name={'sync'} size={26} />
+        <Icon color={'white'} name={'sync'} size={26} />
       </TouchableOpacity>
 
       {/* {visible && (

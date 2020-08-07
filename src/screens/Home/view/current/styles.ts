@@ -1,13 +1,11 @@
-import {StyleSheet, Dimensions, Platform} from 'react-native';
-const {width, height} = Dimensions.get('screen');
+import {StyleSheet, Dimensions} from 'react-native';
+const {height} = Dimensions.get('screen');
 import {scale} from '../../../../utils';
 import {IStyles} from './interface';
 
-console.log(height);
 const styles = StyleSheet.create<IStyles>({
   current: {
     height: height * 0.4,
-    borderWidth: 1,
     marginVertical: 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -20,15 +18,21 @@ const styles = StyleSheet.create<IStyles>({
     fontSize: 26,
     fontFamily: 'OpenSans',
     textTransform: 'capitalize',
+    color: 'white',
+    fontWeight: 'bold',
   },
   degreeCelsius: {
     fontSize: 26,
     fontFamily: 'OpenSans',
     marginTop: scale(20),
+    color: 'white',
+    fontWeight: 'bold',
   },
   degreeNumber: {
     fontSize: 82,
     fontFamily: 'OpenSans',
+    color: 'white',
+    fontWeight: 'bold',
   },
 
   loadingContainer: {

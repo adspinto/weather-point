@@ -2,22 +2,18 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
   Dimensions,
   ScrollView,
   ActivityIndicator,
 } from 'react-native';
-import styles from '../styles';
-import {images, colors} from '../../../../utils';
+import styles from './styles';
+import {colors} from '../../../../utils';
 import {WindChartProps} from '../../interface';
 import Icon from '../../../../components/fontAwesome';
 import {LineChart} from 'react-native-chart-kit';
 const screenWidth = Dimensions.get('window').width;
 const WindChart = (props: WindChartProps) => {
   const {data, status} = props;
-  const date = new Date();
-  const hour = date.getHours();
-  console.log('hour', hour);
 
   const labels = data
     ? data.map((item: any, index: number) => {
@@ -30,7 +26,7 @@ const WindChart = (props: WindChartProps) => {
       })
     : [];
   const temps = data
-    ? data.map((item) => {
+    ? data.map((item: any) => {
         return item.temp;
       })
     : [];
@@ -39,7 +35,7 @@ const WindChart = (props: WindChartProps) => {
     datasets: [
       {
         data: temps,
-        color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`, // optional
+        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
         strokeWidth: 4, // optional
       },
     ],
@@ -50,14 +46,14 @@ const WindChart = (props: WindChartProps) => {
     backgroundGradientFromOpacity: 0,
     backgroundGradientTo: '#08130D',
     backgroundGradientToOpacity: 0,
-    color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+    color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
     strokeWidth: 4, // optional, default 3
     barPercentage: 0.5,
     useShadowColorFromDataset: false, // optional
   };
 
   return (
-    <ScrollView horizontal>
+    <ScrollView contentContainerStyle={styles.windchartRoot} horizontal>
       {status === 'pending' ? (
         <View style={styles.windIndicator}>
           <ActivityIndicator color={colors.gray} size={40} />
@@ -90,7 +86,12 @@ const WindChart = (props: WindChartProps) => {
                             },
                             styles.locationArrowSubContainer,
                           ]}>
-                          <Icon size={12} name={'location-arrow'} solid />
+                          <Icon
+                            color={'white'}
+                            size={12}
+                            name={'location-arrow'}
+                            solid
+                          />
                         </View>
                       </View>
 
@@ -99,8 +100,12 @@ const WindChart = (props: WindChartProps) => {
                       </Text>
                     </View>
                     <View>
-                      <Text>{Math.floor(item.temp)}°C</Text>
-                      <Text>{index === 0 ? 'Agora' : `${item.hour}:00`}</Text>
+                      <Text style={styles.white}>
+                        {Math.floor(item.temp)}°C
+                      </Text>
+                      <Text style={styles.white}>
+                        {index === 0 ? 'Agora' : `${item.hour}:00`}
+                      </Text>
                     </View>
                   </View>
                 );

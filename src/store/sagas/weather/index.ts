@@ -13,7 +13,7 @@ export function* getWeatherRequest(action: GetWeatherRequest) {
       api.get,
       `onecall?lat=${location.latitude}&lon=${location.longitude}&units=metric&lang=pt_br&exclude=minutely&appid=${general.openWeatherApiKey}`,
     );
-    console.log(response);
+
     let data = response.data;
     var days = [
       'Domingo',
