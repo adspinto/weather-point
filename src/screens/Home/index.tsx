@@ -4,14 +4,17 @@ import {HomeProps} from './interface';
 import HomeView from './view';
 import {images} from '../../utils';
 import {useSelector, RootStateOrAny, useDispatch} from 'react-redux';
-import {WeatherActions} from '../../store/creators';
+import {WeatherActions, LocationActions} from '../../store/creators';
 
 const Home = (props: HomeProps) => {
-  const {navigation} = props;
+  const {navigation, route} = props;
   const dispatch = useDispatch();
-  const getWeatherRequest = useCallback(
-    (location: any) => {
-      dispatch(WeatherActions.getWeatherRequest(location));
+  const getLocationRequest = useCallback(() => {
+    dispatch(LocationActions.getLocationRequest());
+  }, [dispatch]);
+  const setWeatherGradient = useCallback(
+    (color: any) => {
+      dispatch(WeatherActions.setWeatherGradient(color));
     },
     [dispatch],
   );
@@ -21,10 +24,12 @@ const Home = (props: HomeProps) => {
     currentTemperature,
     currentTemperatureStatus,
     status,
+    gradient,
   } = useSelector((state: RootStateOrAny) => {
     return {
       data: state.weather.data,
       status: state.weather.status,
+      gradient: state.weather.gradient,
       location: state.location.data,
       currentTemperature: state?.weather?.data?.current?.temp,
       currentTemperatureStatus:
@@ -33,20 +38,25 @@ const Home = (props: HomeProps) => {
   });
 
   const headerPress = useCallback(() => {
-    getWeatherRequest(location);
-  }, [getWeatherRequest, location]);
-  const sevenPress = useCallback(() => {}, []);
+    getLocationRequest();
+  }, [getLocationRequest]);
+
+  const sevenPress = useCallback(() => {
+    navigation.navigate('SevenDays', {gradient});
+  }, [gradient, navigation]);
   return (
     <HomeView
       data={data}
       headerPress={headerPress}
       sevenPress={sevenPress}
+      setWeatherGradient={setWeatherGradient}
       location={location}
       navigation={navigation}
       source={images.defaultBackground}
       currentTemperature={currentTemperature}
       currentTemperatureStatus={currentTemperatureStatus}
       status={status}
+      gradient={gradient}
     />
   );
 };

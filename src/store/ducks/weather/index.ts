@@ -3,6 +3,10 @@ import {Actions, Weather, Types} from './interface';
 
 const initialState: Weather = Immutable({
   data: {},
+  gradient: {
+    secondary: '#007EFF',
+    main: '#55A9FF',
+  },
   status: 'iddle',
   errorMessage: '',
 });
@@ -25,6 +29,11 @@ export default function start(state = initialState, action: Actions) {
         ...state,
         status: 'rejected',
         errorMessage: action.payload.errorMessage,
+      };
+    case Types.SET_WEATHER_GRADIENT:
+      return {
+        ...state,
+        gradient: action.payload.gradient,
       };
 
     default:

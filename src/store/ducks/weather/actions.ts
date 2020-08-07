@@ -3,6 +3,7 @@ import {
   GetWeatherSuccess,
   Types,
   GetWeatherFailure,
+  SetWeatherGradient,
   locationType,
   WeatherData,
 } from './interface';
@@ -19,9 +20,14 @@ const getWeatherFailure = (errorMessage: string): GetWeatherFailure => ({
   type: Types.GET_WEATHER_FAILURE,
   payload: {errorMessage},
 });
+const setWeatherGradient = (gradient: any): SetWeatherGradient => ({
+  type: Types.SET_WEATHER_GRADIENT,
+  payload: {gradient},
+});
 
 export const Creators = {
   getWeatherRequest,
   getWeatherSuccess,
   getWeatherFailure,
+  setWeatherGradient,
 };

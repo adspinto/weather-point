@@ -16,6 +16,7 @@ export interface IStyles {
 
 export interface HomeProps {
   navigation: StackNavigationProp<any, 'Home'>;
+  route: any;
 }
 
 export interface HomeViewProps {
@@ -25,9 +26,11 @@ export interface HomeViewProps {
   location: LocationType;
   headerPress: () => void;
   sevenPress: () => void;
+  setWeatherGradient: (color: any) => void;
   currentTemperatureStatus: string;
   currentTemperature: number;
   status: string;
+  gradient: any;
 }
 
 export interface HeaderProps {

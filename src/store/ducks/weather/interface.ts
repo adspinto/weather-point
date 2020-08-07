@@ -14,9 +14,10 @@ export type WeatherData = {
 };
 
 export enum Types {
-  GET_WEATHER_REQUEST = 'start/GET_WEATHER_REQUEST',
-  GET_WEATHER_SUCCESS = 'start/GET_WEATHER_SUCCESS',
-  GET_WEATHER_FAILURE = 'start/GET_WEATHER_FAILURE',
+  GET_WEATHER_REQUEST = 'weather/GET_WEATHER_REQUEST',
+  GET_WEATHER_SUCCESS = 'weather/GET_WEATHER_SUCCESS',
+  GET_WEATHER_FAILURE = 'weather/GET_WEATHER_FAILURE',
+  SET_WEATHER_GRADIENT = 'weather/SET_WEATHER_GRADIENT',
 }
 export interface Actions {
   action: () => void;
@@ -39,4 +40,8 @@ export interface GetWeatherSuccess {
 export interface GetWeatherFailure {
   type: Types.GET_WEATHER_FAILURE;
   payload: {errorMessage: string};
+}
+export interface SetWeatherGradient {
+  type: Types.SET_WEATHER_GRADIENT;
+  payload: {gradient: any};
 }

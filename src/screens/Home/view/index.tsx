@@ -1,22 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {View, ScrollView, Dimensions, StatusBar} from 'react-native';
+import React, {useEffect, useState, useCallback} from 'react';
+import {ScrollView} from 'react-native';
 import styles from './styles';
-import {images} from '../../../utils';
 import {HomeViewProps} from '../interface';
-import Icon from '../../../components/fontAwesome';
 import Header from './header';
 import Current from './current';
 import Seven from './seven';
 import WindChart from './windChart';
-import {
-  Defs,
-  LinearGradient,
-  Svg,
-  Stop,
-  Circle,
-  Rect,
-  Ellipse,
-} from 'react-native-svg';
+
+import GradientContainer from '../../../components/gradientContainer';
+
 const HomeView = (props: HomeViewProps) => {
   const {
     data,
@@ -26,71 +18,49 @@ const HomeView = (props: HomeViewProps) => {
     currentTemperatureStatus,
     currentTemperature,
     sevenPress,
+    gradient,
+    setWeatherGradient,
   } = props;
-  const [gradientColor, setGradientColor] = useState({
-    main: '#7DBEFE',
-    secondary: '#003BB8',
-  });
+
+  const setColor = useCallback((color) => {
+    setWeatherGradient(color);
+  }, []);
 
   useEffect(() => {
-    // console.log(data);
     const date = new Date();
     const hours = date.getHours();
-    console.log(date.getHours());
     switch (true) {
-      case hours > 6 && hours < 11:
-        console.log('hours > 6 && hours < 11');
+      case hours > 6 && hours < 12:
+        setColor({
+          secondary: '#056BD2',
+          main: '#55A9FF',
+        });
         break;
-      case hours > 11 && hours < 18:
-        console.log('hours > 11 && hours < 18');
+      case hours > 12 && hours < 18:
+        setColor({
+          secondary: '#E5C664',
+          main: '#FF9F01',
+        });
         break;
       case hours > 18:
-        console.log('hours > 18');
-        setGradientColor({
+        setColor({
+          secondary: '#025FBD',
+          main: '#191970',
+        });
+
+        break;
+      default:
+        setColor({
           secondary: '#025FBD',
           main: '#191970',
         });
         break;
-      default:
-        console.log('default');
-        break;
     }
-    //6 a 11 dia
-    //11 a 18 tarde
-    //18 a 6 noite
   }, []);
+
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <StatusBar
-        barStyle={'light-content'}
-        backgroundColor={gradientColor.main}
-      />
-      <View style={styles.gradientContainer}>
-        <Svg
-          height={`${Dimensions.get('screen').height + 100}`}
-          width={`${Dimensions.get('screen').width}`}>
-          <Defs>
-            <LinearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
-              <Stop
-                offset="0"
-                stopColor={`${gradientColor.main}`}
-                stopOpacity="1"
-              />
-              <Stop
-                offset="1"
-                stopColor={`${gradientColor.secondary}`}
-                stopOpacity="1"
-              />
-            </LinearGradient>
-          </Defs>
-          <Rect
-            width={`${Dimensions.get('screen').width}`}
-            height={`${Dimensions.get('screen').height + 100}`}
-            fill="url(#grad)"
-          />
-          {/* <Ellipse cx="150" cy="75" rx="85" ry="55" fill="url(#grad)" /> */}
-        </Svg>
-      </View>
+      <GradientContainer gradientColor={gradient} />
       <Header title={location.cityName} onPress={headerPress} />
       <Current
         status={status}
