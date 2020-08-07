@@ -1,4 +1,4 @@
-# weather-point
+# Weather Point
 Aplicativo mobile de Previsão do tempo
 ---
 
