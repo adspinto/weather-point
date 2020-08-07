@@ -2,7 +2,7 @@
 Aplicativo mobile de Previsão do tempo
 ---
 
-Aplicativo de previsão de tempo na sua localização consumindo a (Open Weather Api)[https://openweathermap.org/api/one-call-api].
+Aplicativo de previsão de tempo na sua localização consumindo a [Open Weather Api](https://openweathermap.org/api/one-call-api).
 
 - Previsão atual;
 - Sete dias de previsão;
